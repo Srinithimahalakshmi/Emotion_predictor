@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Emotion Classifier</h1>
+        <form method="POST">
+            <textarea name="comment" placeholder="Enter your comment here..." required>{{ comment }}</textarea>
+            <br>
+            <button type="submit">Predict Emotion</button>
+        </form>
+        
+        {% if prediction %}
+        <div class="result">
+            <h3>Predicted Emotion: <span>{{ prediction }}</span></h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
