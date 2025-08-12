@@ -1,20 +1,8 @@
 
 #  Emotion Predictor (Naive Bayes)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
-[![Python Version](https://img.shields.io/badge/Python-3.x-blue.svg)]()
-
 ##  Overview
-This project leverages **Naive Bayes** to classify text or speech data into emotions such as **Joy**, **Anger**, **Sadness**, and **Surprise**. It includes data cleaning, TF-IDF feature extraction, model training, evaluation, and a user-friendly web interface powered by Flask.
-
----
-
-##  Features
--  **Data Cleaning**: Preprocesses raw text or speech transcriptions to prepare for modeling  
--  **Feature Extraction**: Utilizes TF-IDF vectors to capture meaningful patterns  
--  **Model Training**: Trains a Naive Bayes classifier for emotion detection  
--  **Web App**: Flask-based interface (`app.py`, `templates/`, `static/`) for interactive predictions  
--  **Notebook Insights**: `model_training.ipynb` contains exploratory analysis and model evaluation visuals  
+A text-based emotion classification system powered by a **Naive Bayes** classifier. It transforms user input—whether text or speech transcription—into one of several emotions such as **Joy**, **Anger**, **Sadness**, or **Surprise**, using TF-IDF vectorization and a clean, interactive interface.
 
 ---
 
@@ -24,19 +12,17 @@ This project leverages **Naive Bayes** to classify text or speech data into emot
 - [📁 Project Structure](#-project-structure)  
 - [📊 Results](#-results)  
 - [🤝 Contributing](#-contributing)  
-- [📜 License](#-license)  
 - [📬 Contact](#-contact)  
 
 ---
 
 ##  Installation
-
 ```bash
 git clone https://github.com/Srinithimahalakshmi/Emotion_predictor.git
 cd Emotion_predictor
 
 python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate       # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ````
 
@@ -44,79 +30,85 @@ pip install -r requirements.txt
 
 ## Usage
 
-### 1. Notebook Exploration & Model Training
+### Notebook Exploration & Training
 
-Run the notebook for data analysis and model training:
+Run the notebook to perform data cleaning, feature extraction via TF-IDF, training, and evaluation:
 
 ```bash
 jupyter notebook model_training.ipynb
 ```
 
-### 2. Run the Flask Web App
+### Launch Web Interface
 
-Start the server to make predictions interactively:
+Start the Flask application to test predictions interactively:
 
 ```bash
 python app.py
 ```
 
-Open **[http://127.0.0.1:5000](http://127.0.0.1:5000)** in your browser, enter input, and let it detect your emotion!
+Then visit **[http://127.0.0.1:5000](http://127.0.0.1:5000)** in your browser, input text, and let the model infer your emotion!
 
-### 3. Command-Line Testing
+### Quick CLI Testing
 
-Use `test.py` to classify sample inputs and view predictions via the console.
+Use the `test.py` script to classify sample phrases like so:
+
+```bash
+python test.py "I just got my dream job!"
+```
 
 ---
 
 ## Project Structure
 
-| File / Folder               | Description                                 |
-| --------------------------- | ------------------------------------------- |
-| `Emotion_classify_Data.csv` | Dataset for model training                  |
-| `model_training.ipynb`      | Notebook with EDA, training, and evaluation |
-| `emotion_model_nb.joblib`   | Serialized Naive Bayes model                |
-| `app.py`                    | Flask web application                       |
-| `templates/` & `static/`    | Frontend HTML/CSS components                |
-| `test.py`                   | Script for quick CLI-based testing          |
+```
+Emotion_predictor/
+├── Emotion_classify_Data.csv     # Dataset with labeled emotion samples
+├── model_training.ipynb          # Notebook for model training & evaluation
+├── emotion_model_nb.joblib       # Saved Naive Bayes emotion classifier
+├── app.py                         # Flask app for interactive predictions
+├── test.py                        # CLI script for quick emotion detection
+├── templates/
+│   └── index.html                # Web UI template
+├── static/
+│   └── style.css                 # Stylesheet for the web interface
+├── requirements.txt              # Project dependencies
+└── README.md                     # Documentation (this file)
+```
 
 ---
 
 ## Results
 
-Report the model’s performance metrics (accuracy, precision, recall, F1-score) from the notebook. Embed visuals like confusion matrices or classification reports to showcase model efficacy.
+* Display model performance metrics such as **Accuracy**, **Precision**, **Recall**, and **F1-Score**.
+* Include visuals like a **confusion matrix**, classification reports, or bar charts—embedded within the notebook or linked from the `results/` folder.
 
 ---
 
 ## Contributing
 
-Contributions are warmly welcome! You could help with:
+Contributions are highly encouraged! You can help by:
 
-* Improving preprocessing or feature extraction
-* Enhancing model performance or adding new algorithms
-* Polishing the web UI design
-* Expanding documentation or adding sample data
+* Enhancing data preprocessing or expanding the dataset
+* Experimenting with different models (e.g., SVM, Log-Regression, or Neural Networks)
+* Adding detailed evaluation metrics or visualizations
+* Improving the frontend UI or adding accessibility features
 
-**To contribute**:
+**To contribute:**
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/YourFeature`)
-3. Make your changes & commit (`git commit -m "Add new feature"`)
+1. Fork this repository
+2. Create a new branch: `git checkout -b feature/YourFeature`
+3. Commit your changes: `git commit -m "Add <feature>"`
 4. Push and open a Pull Request
-
----
-
-## License
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## Contact
 
 👤 **Maintainer**: Srinithi Mahalakshmi
-📧 **Email**: [srinithiarumugam2003@gmail.com]
+📧 **Email**: [srinithiarumugam2003@gmail.com](mailto:srinithiarumugam2003@gmail.com)
 🔗 **GitHub**: [Srinithimahalakshmi](https://github.com/Srinithimahalakshmi)
 
 ---
 
-Thank you for checking out this project! If you find it useful, a ⭐ would be greatly appreciated!
+⭐ *If this project helped you, please consider giving it a star!*
+
